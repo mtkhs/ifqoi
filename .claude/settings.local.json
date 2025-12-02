@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(mkdir:*)",
+      "WebSearch",
+      "WebFetch(domain:toro.d.dooo.jp)",
+      "Bash(cmake --build:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

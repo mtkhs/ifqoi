@@ -1,0 +1,10 @@
+LIBRARY ifqoi
+EXPORTS
+    GetPluginInfo
+    GetPluginInfoW
+    IsSupported
+    IsSupportedW
+    GetPictureInfo
+    GetPictureInfoW
+    GetPicture
+    GetPictureW
