@@ -4,14 +4,15 @@ QOI (Quite OK Image Format) 形式の画像ファイルを Susie 対応画像ビ
 
 ## 概要
 
-このプラグインは、高速でロスレスな画像圧縮フォーマットである QOI 形式のファイルをデコードし、「あふｗ」などの Susie 対応ビューアで表示できるようにします。
+QOI 形式の画像をデコードし、Susie 対応ビューア (例: あふｗ) で表示します。QOI デコーダを内包しており、外部ライブラリには依存しません。
 
 ## 機能
 
 - QOI 形式 (*.qoi) の画像ファイルの読み込み
-- RGB および RGBA カラーモードに対応
+- RGB/RGBA 入力に対応し、出力は 32bit (BGRA) で提供
+- 透過は背景色 (RGB 224,224,224) に合成
 - 64bit (x64) 環境に対応
-- 高速なデコード処理
+- 軽量なデコード実装
 
 ## ビルド方法
 
@@ -23,9 +24,9 @@ QOI (Quite OK Image Format) 形式の画像ファイルを Susie 対応画像ビ
 
 ### ビルド手順
 
-1. リポジトリをクローン
+1. リポジトリを取得
 ```bash
-git clone https://github.com/yourusername/ifqoi.git
+git clone <このリポジトリのURL>
 cd ifqoi
 ```
 
@@ -45,7 +46,7 @@ cmake .. -G "Visual Studio 17 2022" -A x64
 cmake --build . --config Release
 ```
 
-完成後、`Release` ディレクトリに `ifqoi.sph` が生成されます。
+完成後、`build/Release` ディレクトリに `ifqoi.sph` が生成されます。
 
 ## インストール方法
 
@@ -56,31 +57,3 @@ cmake --build . --config Release
 ## 対応フォーマット
 
 - **拡張子**: .qoi
-- **カラーモード**: RGB (3チャンネル), RGBA (4チャンネル)
-- **カラースペース**: sRGB, Linear
-- **最大画像サイズ**: 4億ピクセル
-
-## QOI フォーマットについて
-
-QOI (Quite OK Image Format) は以下の特徴を持つ画像フォーマットです：
-
-- PNG と同等の圧縮率
-- PNG より 20～50倍高速なエンコード
-- PNG より 3～4倍高速なデコード
-- シンプルな仕様で実装が容易
-
-詳細は公式サイトをご覧ください: https://qoiformat.org/
-
-## 参考
-
-- [QOI 公式リポジトリ](https://github.com/phoboslab/qoi)
-- [Susie プラグイン仕様](https://toro.d.dooo.jp/dlsphapi.html)
-- [参考実装 (ifdcm)](https://github.com/mtkhs/ifdcm)
-
-## ライセンス
-
-MIT License
-
-## 作者
-
-2025年作成
